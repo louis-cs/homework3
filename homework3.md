@@ -70,8 +70,8 @@ Let $`T_{this} = (V_{this}, E_{this}, \hat{v}_{this})`$ be an abstract value of 
 ##### Class invariant 
 
 ```math
-\forall (v, w) \in E_{this}.\ v, w \in V_{this}  
-\forall v \in E_{this}, \exists ! set of unique edges linking \hat{v}_{this} to v
+\forall (v, w) \in E_{this}.\ v, w \in V_{this}   
+\forall v \in E_{this}, \exists ! \ set \ of \ unique \ edges \ linking \hat{v}_{this} to v
 ```
 
 ##### getDepth
