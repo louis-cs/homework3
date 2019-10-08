@@ -69,7 +69,10 @@ Let $`T_{this} = (V_{this}, E_{this}, \hat{v}_{this})`$ be an abstract value of 
 
 ##### Class invariant 
 
-<!-- TODO -->
+```math
+\forall (v, w) \in E_{this}.\ v, w \in V_{this}  
+\forall v \in E_{this}, \exists ! set of unique edges linking \hat{v}_{this} to v
+```
 
 ##### getDepth
 
@@ -90,8 +93,9 @@ int getDepth(N vertex);
 int getHeight();
 ```
 
-- requires: <!-- TODO -->
-- ensures:  <!-- TODO -->
+- requires: getRoot.isPresent()
+- ensures:  
+    + returns the maximum depth of this tree
 
 ##### getRoot
 
@@ -99,8 +103,10 @@ int getHeight();
 Optional<N> getRoot();
 ```
 
-- requires: <!-- TODO -->
-- ensures:  <!-- TODO -->
+- requires:
+- ensures: 
+    + returns the root of this tree if it is not empty
+    + returns Optional.empty(), otherwise
 
 ##### getParent
 
@@ -108,8 +114,10 @@ Optional<N> getRoot();
 Optional<N> getParent(N vertex);
 ```
 
-- requires: <!-- TODO -->
-- ensures:  <!-- TODO -->
+- requires: vertex is in $`\mathcal{N}`$
+- ensures:
+    + returns getSources(vertex).stream().findAny() if vertex is not the root; and
+    + returns Optional.empty(), otherwise
 
 
 ## `MutableGraph<N>`
