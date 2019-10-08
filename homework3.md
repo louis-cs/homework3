@@ -35,8 +35,12 @@ boolean containsVertex(N vertex);
 boolean containsEdge(N source, N target);
 ```
 
-- requires: <!-- TODO -->
-- ensures:  <!-- TODO -->
+- requires:
+    * source is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
+    * target is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
+- ensures:
+    + returns true if the edge (source, target) is in $`E_{this}`$; and
+    - returns false, otherwise.
 
 ##### getSources
 
@@ -44,18 +48,20 @@ boolean containsEdge(N source, N target);
 Set<N> getSources(N target);
 ```
 
-- requires: <!-- TODO -->
-- ensures:  <!-- TODO -->
-
+- requires: target is in $`\mathcal{N}`$
+- ensures:  
+    + returns the set of vertices that have an edge to target if the target is in the graph, immutable
+    - returns the empty set if target is not in the graph
 ##### getTargets
 
 ```java
 Set<N> getTargets(N source);
 ```
 
-- requires: <!-- TODO -->
-- ensures:  <!-- TODO -->
-
+- requires: source is in $`\mathcal{N}`$
+- ensures:  
+    + returns the set of vertices that have an edge from source if source is in the graph, immutable
+    - returns the empty set if the target is not in the graph
 
 ## `Tree<N>`
 
