@@ -57,4 +57,138 @@ public abstract class AbstractMutableGraphTest<V extends Comparable<V>, G extend
     // TODO: write black-box test cases for each method of MutableGraph with respect to
     //  the specification, including the methods of Graph that MutableGraph extends.
 
+    @Test
+    void testContainsVertexTrue(){
+        graph.addVertex(v1);
+
+        Assertions.assertTrue(graph.containsVertex(v1));
+    }
+
+    @Test
+    void testContainsVertexFalse(){
+        graph.addVertex(v1);
+
+        Assertions.assertFalse(graph.containsVertex(v2));
+    }
+
+    @Test
+    void testContainsEdgeTrue(){
+        graph.addVertex(v1);
+        graph.addVertex(v2);
+        graph.addVertex(v3);
+        graph.addEdge(v1,v2);
+
+        Assertions.assertTrue(graph.containsEdge(v1,v2));
+    }
+
+    @Test
+    void testContainsEdgeFalse(){
+        graph.addVertex(v1);
+        graph.addVertex(v2);
+        graph.addVertex(v3);
+        graph.addEdge(v1,v2);
+
+        Assertions.assertFalse(graph.containsEdge(v1,v3));
+    }
+
+    @Test
+    void testGetSourcesMultiple(){
+        graph.addVertex(v1);
+        graph.addVertex(v2);
+        graph.addVertex(v3);
+        graph.addEdge(v1,v3);
+        graph.addEdge(v2,v3);
+
+        Assertions.assertEquals(graph.getSources(v3).size(), 2);
+    }
+
+    @Test
+    void testGetSourcesNotFound(){
+        graph.addVertex(v1);
+        graph.addVertex(v2);
+        graph.addVertex(v3);
+        graph.addEdge(v1,v3);
+        graph.addEdge(v2,v3);
+
+        Assertions.assertTrue(graph.getSources(v4).isEmpty());
+    }
+
+    @Test
+    void testGetSourcesNoParent(){
+        graph.addVertex(v1);
+        graph.addVertex(v2);
+        graph.addVertex(v3);
+        graph.addEdge(v1,v3);
+        graph.addEdge(v2,v3);
+
+        Assertions.assertTrue(graph.getSources(v1).isEmpty());
+    }
+
+    @Test
+    void testGetTargetsMultiple(){
+        graph.addVertex(v1);
+        graph.addVertex(v2);
+        graph.addVertex(v3);
+        graph.addEdge(v1,v3);
+        graph.addEdge(v1,v3);
+
+        Assertions.assertEquals(graph.getTargets(v1).size(), 2);
+    }
+
+    @Test
+    void testGetTargetsNotFound(){
+        graph.addVertex(v1);
+        graph.addVertex(v2);
+        graph.addVertex(v3);
+        graph.addEdge(v1,v3);
+        graph.addEdge(v1,v3);
+
+        Assertions.assertTrue(graph.getTargets(v4).isEmpty());
+    }
+
+    @Test
+    void testGetTargetsNoChildren(){
+        graph.addVertex(v1);
+        graph.addVertex(v2);
+        graph.addVertex(v3);
+        graph.addEdge(v1,v3);
+        graph.addEdge(v1,v3);
+
+        Assertions.assertTrue(graph.getTargets(v2).isEmpty());
+    }
+
+    @Test
+    void testGetVerticesMultiple(){
+        graph.addVertex(v1);
+        graph.addVertex(v2);
+        graph.addVertex(v3);
+        graph.addEdge(v1,v3);
+
+        Assertions.assertEquals(graph.getVertices().size(), 3);
+    }
+
+    @Test
+    void testGetVerticesEmpty(){
+
+        Assertions.assertTrue(graph.getVertices().isEmpty());
+    }
+
+    @Test
+    void testGetEdgesMultiple(){
+        graph.addVertex(v1);
+        graph.addVertex(v2);
+        graph.addVertex(v3);
+        graph.addEdge(v1,v3);
+        graph.addEdge(v1,v3);
+        graph.addEdge(v2,v3);
+
+        Assertions.assertEquals(graph.getEdges().size(), 3);
+    }
+
+    @Test
+    void testGetEdgesEmpty(){
+
+        Assertions.assertTrue(graph.getEdges().isEmpty());
+    }
+
 }
