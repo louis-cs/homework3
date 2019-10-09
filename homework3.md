@@ -70,7 +70,7 @@ Let $`T_{this} = (V_{this}, E_{this}, \hat{v}_{this})`$ be an abstract value of 
 ##### Class invariant 
 
 ```math
-\forall (v, w) \in E_{this}.\ v, w \in V_{this} \n
+\forall (v, w) \in E_{this}.\ v, w \in V_{this};  
 \forall v \in E_{this}, \exists ! \ set \ of \ unique \ edges \ linking \hat{v}_{this} \ to \ v
 ```
 
@@ -168,7 +168,7 @@ boolean addEdge(N source, N target);
     + source is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
     + target is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
 - ensures:
-    + $`E_{next} = E_{this} \cup \texttt{\{(vertex, target)\}}`$
+    + $`E_{next} = E_{this} \cup \texttt{\{(source, target)\}}`$
     + $`V_{next} = V_{this}`$ (the vertices are not modified)
     + If $`G_{this}`$ satisfies the class invariant, $`G_{next}`$ also satisfies the class invariant; and
     + returns true if $`\texttt{(source, target)} \notin E_{this}`$.
@@ -185,7 +185,7 @@ boolean removeEdge(N source, N target);
     + source is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
     + target is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
 - ensures: 
-    + $`E_{next} = E_{this} \setminus \texttt{\{(vertex, target)\}}`$
+    + $`E_{next} = E_{this} \setminus \texttt{\{(source, target)\}}`$
     + $`V_{next} = V_{this}`$ (the vertices are not modified)
     + If $`G_{this}`$ satisfies the class invariant, $`G_{next}`$ also satisfies the class invariant; and
     + returns true if $`\texttt{(source, target)} \in E_{this}`$.
@@ -194,10 +194,15 @@ boolean removeEdge(N source, N target);
 
 ## `MutableTree<N>`
 
-##### Class invariant 
-
 Let $`T_{this} = (V_{this}, E_{this}, \hat{v}_{this})`$ be an abstract value of the current tree object,
 and $`T_{next} = (V_{next}, E_{next}, \hat{v}_{next})`$ be an abstract value of the tree object _modified by_ the method call. 
+
+##### Class invariant 
+
+```math
+\forall (v, w) \in E_{this}.\ v, w \in V_{this};  
+\forall v \in E_{this}, \exists ! \ set \ of \ unique \ edges \ linking \hat{v}_{this} \ to \ v
+```
 
 ##### addVertex
 
@@ -205,8 +210,13 @@ and $`T_{next} = (V_{next}, E_{next}, \hat{v}_{next})`$ be an abstract value of 
 boolean addVertex(N vertex);
 ```
 
-- requires: <!-- TODO -->
-- ensures:  <!-- TODO -->
+- requires:
+    + E_{this} is empty
+    + vertex is in $`\mathcal{N}`$ is not $`\mathsf{null}`$
+- ensures:
+    + T_{next} = (\{vertex}, \emptyset , vertex)
+    + returns true if the Tree was empty
+    + returns false otherwise
 
 ##### removeVertex
 
@@ -214,8 +224,11 @@ boolean addVertex(N vertex);
 boolean removeVertex(N vertex);
 ```
 
-- requires: <!-- TODO -->
-- ensures:  <!-- TODO -->
+- requires: vertex is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
+- ensures:
+    + $`V_{next} = V_{this} \setminus  (\{\texttt{vertex}\} \cup \texttt{vertex.getChildren()})`$;
+    + returns true if $`\texttt{vertex} \in V_{this}`$.
+    + returns false otherwise
 
 ##### addEdge
 
@@ -223,8 +236,14 @@ boolean removeVertex(N vertex);
 boolean addEdge(N source, N target);
 ```
 
-- requires: <!-- TODO -->
-- ensures:  <!-- TODO -->
+- requires:
+    + source is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
+    + target is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
+- ensures:
+    + $`E_{next} = E_{this} \cup \texttt{\{(source, target)\}}`$
+    + $`V_{next} = V_{this} \cup \{\texttt{target}\}`$
+    + returns true if $`\texttt{source} \in E_{this}`$ and $`\texttt{target} \notin E_{this}`$
+    + returns false otherwise.
 
 ##### removeEdge
 
@@ -232,8 +251,14 @@ boolean addEdge(N source, N target);
 boolean removeEdge(N source, N target);
 ```
 
-- requires: <!-- TODO -->
-- ensures:  <!-- TODO -->
+- requires:
+    + source is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
+    + target is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
+- ensures:
+    + $`V_{next} = V_{this} \setminus (\texttt{(source, target)}`$
+    + $`V_{next} = V_{this} \setminus  (\{\texttt{target}\} \cup \texttt{target.getChildren()})`$;
+    + returns true if $`\texttt{vertex} \in V_{this}`$.
+    + returns false otherwise
 
 
 # Problem 2
