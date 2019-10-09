@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ParentPointerTree.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">homework3</a> &gt; <a href="index.source.html" class="el_package">edu.postech.csed332.homework3</a> &gt; <span class="el_source">ParentPointerTree.java</span></div><h1>ParentPointerTree.java</h1><pre class="source lang-java linenums">package edu.postech.csed332.homework3;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+/**
+ * An implementation of Tree, where each vertex has a reference to its parent node but
+ * no references to its children.
+ *
+ * @param &lt;N&gt; type of vertices, which must be immutable and comparable
+ */
+public class ParentPointerTree&lt;N extends Comparable&lt;N&gt;&gt; implements MutableTree&lt;N&gt; {
+
+    private static class Node&lt;V&gt; {
+        final @Nullable V parent;
+        final int depth;
+
+<span class="nc" id="L21">        Node(@Nullable V parent, int depth) {</span>
+<span class="nc" id="L22">            this.parent = parent;</span>
+<span class="nc" id="L23">            this.depth = depth;</span>
+<span class="nc" id="L24">        }</span>
+    }
+
+    /**
+     * A root vertex of this tree; {@code null} for an empty tree.
+     */
+    private @Nullable N root;
+
+    /**
+     * A map assigning to each vertex a pair of a parent reference and a depth. The parent
+     * of the root is {@code null}. For example, a tree with four vertices {v1, v2, v3, v4}
+     * and three edges {(v1,v2), (v1,v3), (v2,v4)}, where v1 is the root, is represented by
+     * the map {v1 |-&gt; (null,0), v2 |-&gt; (v1,1), v3 |-&gt; (v1,1), v4 |-&gt; (v2,2)}.
+     */
+    private final @NotNull SortedMap&lt;N, Node&lt;N&gt;&gt; nodeMap;
+
+    /**
+     * Creates an empty parent pointer tree.
+     */
+<span class="fc" id="L43">    public ParentPointerTree() {</span>
+<span class="fc" id="L44">        this.root = null;</span>
+<span class="fc" id="L45">        this.nodeMap = new TreeMap&lt;&gt;();</span>
+<span class="fc" id="L46">    }</span>
+
+    @Override
+    public @NotNull Optional&lt;N&gt; getRoot() {
+        // TODO: implement this
+<span class="nc" id="L51">        return Optional.empty();</span>
+    }
+
+    @Override
+    public int getDepth(@NotNull N vertex) {
+        // TODO: implement this
+<span class="fc" id="L57">        return 0;</span>
+    }
+
+    @Override
+    public int getHeight() {
+        // TODO: implement this
+<span class="fc" id="L63">        return 0;</span>
+    }
+
+    @Override
+    public boolean containsVertex(@NotNull N vertex) {
+        // TODO: implement this
+<span class="fc" id="L69">        return false;</span>
+    }
+
+    @Override
+    public boolean addVertex(@NotNull N vertex) {
+        // TODO: implement this
+<span class="fc" id="L75">        return false;</span>
+    }
+
+    @Override
+    public boolean removeVertex(@NotNull N vertex) {
+        // TODO: implement this
+<span class="fc" id="L81">        return false;</span>
+    }
+
+    @Override
+    public boolean containsEdge(@NotNull N source, @NotNull N target) {
+        // TODO: implement this
+<span class="fc" id="L87">        return false;</span>
+    }
+
+    @Override
+    public boolean addEdge(@NotNull N source, @NotNull N target) {
+        // TODO: implement this
+<span class="fc" id="L93">        return false;</span>
+    }
+
+    @Override
+    public boolean removeEdge(@NotNull N source, @NotNull N target) {
+        // TODO: implement this
+<span class="fc" id="L99">        return false;</span>
+    }
+
+    @Override
+    public @NotNull Set&lt;N&gt; getSources(N target) {
+        // TODO: implement this
+<span class="fc" id="L105">        return Collections.emptySet();</span>
+    }
+
+    @Override
+    public @NotNull Set&lt;N&gt; getTargets(N source) {
+        // TODO: implement this
+<span class="fc" id="L111">        return Collections.emptySet();</span>
+    }
+
+    @Override
+    public @NotNull Set&lt;N&gt; getVertices() {
+        // TODO: implement this
+<span class="nc" id="L117">        return Collections.emptySet();</span>
+    }
+
+    @Override
+    public @NotNull Set&lt;Edge&lt;N&gt;&gt; getEdges() {
+        // TODO: implement this
+<span class="nc" id="L123">        return Collections.emptySet();</span>
+    }
+
+    /**
+     * Checks if all class invariants hold for this object
+     *
+     * @return true if the representation of this tree is valid
+     */
+    boolean checkInv() {
+        // TODO: implement this
+<span class="nc" id="L133">        return false;</span>
+    }
+
+    /**
+     * Provides a human-readable string representation for the abstract value of the tree
+     *
+     * @return a string representation
+     */
+    @Override
+    public String toString() {
+<span class="nc" id="L143">        return String.format(&quot;[root: %s, vertex: {%s}, edge: {%s}]&quot;,</span>
+                root,
+<span class="nc" id="L145">                getVertices().stream().map(N::toString).collect(Collectors.joining(&quot;, &quot;)),</span>
+<span class="nc" id="L146">                getEdges().stream().map(Edge::toString).collect(Collectors.joining(&quot;, &quot;)));</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
