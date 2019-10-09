@@ -225,7 +225,7 @@ boolean removeVertex(N vertex);
 
 - requires: vertex is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
 - ensures:
-    + $`V_{next} = V_{this} \setminus  (\{\texttt{vertex}\} \cup \texttt{vertex.getChildren()})`$;
+    + $`V_{next} = V_{this} \setminus  (\{\texttt{vertex}\} \cup \texttt{all vertices following vertex})`$;
     + returns true if $`\texttt{vertex} \in V_{this}`$.
     + returns false otherwise
 
