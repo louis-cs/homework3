@@ -268,27 +268,27 @@ For each question, explain your reasoning _using the abstract specifications tha
 
 ##### `Tree<N>` and `Graph<N>`
 
-* Is `Tree<N>` a subtype of `Graph<N>`?
-Yes, Tree<N> is a subtype of Graph<N>. Tree<N> has stronger specfications in its class invariants
+* Is `Tree<N>` a subtype of `Graph<N>`?  
+Yes, `Tree<N>` is a subtype of `Graph<N>`. `Tree<N>` has stronger specfications in its class invariants
  (having the class invariants of Graph<N> and an additional one). Its preconditions and 
  postconditions are the same, as the Tree is immutable.
 
 ##### `MutableGraph<N>` and `Graph<N>`
 
-* Is `MutableGraph<N>` a subtype of `Graph<N>`
-Yes, MutableGraph<N> is a subtype of Graph<N> : the class invariants are the same, there is not 
+* Is `MutableGraph<N>` a subtype of `Graph<N>`  
+Yes, `MutableGraph<N>` is a subtype of `Graph<N>` : the class invariants are the same, there is not 
   method override, and since every added method ensures the class invariants stay true, then the
    preconditions and postconditions are also the same.
 
 ##### `MutableTree<N>` and `Tree<N>`
 
-* Is `MutableTree<N>` a subtype of `Tree<N>`
-No, MutableTree<N> is not a subtype of Tree<N>. MutableTree<N> can have edges  pointing to deleted
+* Is `MutableTree<N>` a subtype of `Tree<N>`  
+No, `MutableTree<N>` is not a subtype of `Tree<N>`. `MutableTree<N>` can have edges  pointing to deleted
  vertices after using the removeVertex() method. its class invariants are therefore weaker.
 
-##### `MutableTree<N>` and `MutableGraph<N>`
+##### `MutableTree<N>` and `MutableGraph<N>`   
 
-* Is `MutableTree<N>` a subtype of `MutableGraph<N>`
-No, MutableTree<N> is not a subtype of MutableGraph<N>, for the same reason that it is not
-a subtype of Tree<N> : its class invariants are weaker, since it does not always satisfy the
+* Is `MutableTree<N>` a subtype of `MutableGraph<N>`  
+No, `MutableTree<N>` is not a subtype of `MutableGraph<N>`, for the same reason that it is not
+a subtype of `Tree<N>` : its class invariants are weaker, since it does not always satisfy the
 requirement of having all edges being between existing vertices.
