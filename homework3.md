@@ -70,8 +70,8 @@ Let $`T_{this} = (V_{this}, E_{this}, \hat{v}_{this})`$ be an abstract value of 
 ##### Class invariant 
 
 ```math
-\forall (v, w) \in E_{this}.\ v, w \in V_{this}   
-\forall v \in E_{this}, \exists ! \ set \ of \ unique \ edges \ linking \hat{v}_{this} to v
+\forall (v, w) \in E_{this}.\ v, w \in V_{this} \n
+\forall v \in E_{this}, \exists ! \ set \ of \ unique \ edges \ linking \hat{v}_{this} \ to \ v
 ```
 
 ##### getDepth
@@ -150,8 +150,13 @@ boolean addVertex(N vertex);
 boolean removeVertex(N vertex);
 ```
 
-- requires: <!-- TODO -->
-- ensures:  <!-- TODO -->
+- requires: vertex is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
+- ensures:
+    + $`V_{next} = V_{this} \setminus \{\texttt{vertex}\}`$;
+    + $`E_{next} = E_{this} \setminus \{\texttt{e} \in E_{this}, \texttt{target} \in V_{this} \mid \texttt{e = (vertex, target)}`$
+    + If $`G_{this}`$ satisfies the class invariant, $`G_{next}`$ also satisfies the class invariant; and
+    + returns true if $`\texttt{vertex} \in V_{this}`$.
+    + returns false otherwise
 
 ##### addEdge
 
@@ -159,8 +164,16 @@ boolean removeVertex(N vertex);
 boolean addEdge(N source, N target);
 ```
 
-- requires: <!-- TODO -->
-- ensures:  <!-- TODO -->
+- requires:
+    + source is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
+    + target is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
+- ensures:
+    + $`E_{next} = E_{this} \cup \texttt{\{(vertex, target)\}}`$
+    + $`V_{next} = V_{this}`$ (the vertices are not modified)
+    + If $`G_{this}`$ satisfies the class invariant, $`G_{next}`$ also satisfies the class invariant; and
+    + returns true if $`\texttt{(source, target)} \notin E_{this}`$.
+    + returns false otherwise.
+
 
 ##### removeEdge
 
@@ -168,8 +181,15 @@ boolean addEdge(N source, N target);
 boolean removeEdge(N source, N target);
 ```
 
-- requires: <!-- TODO -->
-- ensures:  <!-- TODO -->
+- requires: 
+    + source is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
+    + target is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
+- ensures: 
+    + $`E_{next} = E_{this} \setminus \texttt{\{(vertex, target)\}}`$
+    + $`V_{next} = V_{this}`$ (the vertices are not modified)
+    + If $`G_{this}`$ satisfies the class invariant, $`G_{next}`$ also satisfies the class invariant; and
+    + returns true if $`\texttt{(source, target)} \in E_{this}`$.
+    + returns false otherwise.
 
 
 ## `MutableTree<N>`
