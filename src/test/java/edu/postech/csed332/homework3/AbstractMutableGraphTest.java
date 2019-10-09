@@ -58,10 +58,31 @@ public abstract class AbstractMutableGraphTest<V extends Comparable<V>, G extend
     //  the specification, including the methods of Graph that MutableGraph extends.
 
     @Test
+    void testAddEdge(){
+        graph.addVertex(v1);
+        graph.addVertex(v2);
+
+        Assertions.assertTrue(graph.addEdge(v1,v2));
+        Assertions.assertTrue(checkInv());
+    }
+
+    @Test
+    void testAddEdgeDuplicate(){
+        graph.addVertex(v1);
+        graph.addVertex(v2);
+
+        Assertions.assertTrue(graph.addEdge(v1,v2));
+        Assertions.assertFalse(graph.addEdge(v1,v2));
+        Assertions.assertTrue(graph.containsEdge(v1, v2));
+        Assertions.assertTrue(checkInv());
+    }
+
+    @Test
     void testContainsVertexTrue(){
         graph.addVertex(v1);
 
         Assertions.assertTrue(graph.containsVertex(v1));
+        Assertions.assertTrue(checkInv());
     }
 
     @Test
@@ -69,6 +90,7 @@ public abstract class AbstractMutableGraphTest<V extends Comparable<V>, G extend
         graph.addVertex(v1);
 
         Assertions.assertFalse(graph.containsVertex(v2));
+        Assertions.assertTrue(checkInv());
     }
 
     @Test
@@ -79,6 +101,7 @@ public abstract class AbstractMutableGraphTest<V extends Comparable<V>, G extend
         graph.addEdge(v1,v2);
 
         Assertions.assertTrue(graph.containsEdge(v1,v2));
+        Assertions.assertTrue(checkInv());
     }
 
     @Test
@@ -89,6 +112,7 @@ public abstract class AbstractMutableGraphTest<V extends Comparable<V>, G extend
         graph.addEdge(v1,v2);
 
         Assertions.assertFalse(graph.containsEdge(v1,v3));
+        Assertions.assertTrue(checkInv());
     }
 
     @Test
@@ -100,6 +124,7 @@ public abstract class AbstractMutableGraphTest<V extends Comparable<V>, G extend
         graph.addEdge(v2,v3);
 
         Assertions.assertEquals(graph.getSources(v3).size(), 2);
+        Assertions.assertTrue(checkInv());
     }
 
     @Test
@@ -111,6 +136,7 @@ public abstract class AbstractMutableGraphTest<V extends Comparable<V>, G extend
         graph.addEdge(v2,v3);
 
         Assertions.assertTrue(graph.getSources(v4).isEmpty());
+        Assertions.assertTrue(checkInv());
     }
 
     @Test
@@ -122,6 +148,7 @@ public abstract class AbstractMutableGraphTest<V extends Comparable<V>, G extend
         graph.addEdge(v2,v3);
 
         Assertions.assertTrue(graph.getSources(v1).isEmpty());
+        Assertions.assertTrue(checkInv());
     }
 
     @Test
@@ -133,6 +160,7 @@ public abstract class AbstractMutableGraphTest<V extends Comparable<V>, G extend
         graph.addEdge(v1,v3);
 
         Assertions.assertEquals(graph.getTargets(v1).size(), 2);
+        Assertions.assertTrue(checkInv());
     }
 
     @Test
@@ -144,6 +172,7 @@ public abstract class AbstractMutableGraphTest<V extends Comparable<V>, G extend
         graph.addEdge(v1,v3);
 
         Assertions.assertTrue(graph.getTargets(v4).isEmpty());
+        Assertions.assertTrue(checkInv());
     }
 
     @Test
@@ -155,6 +184,7 @@ public abstract class AbstractMutableGraphTest<V extends Comparable<V>, G extend
         graph.addEdge(v1,v3);
 
         Assertions.assertTrue(graph.getTargets(v2).isEmpty());
+        Assertions.assertTrue(checkInv());
     }
 
     @Test
@@ -165,12 +195,14 @@ public abstract class AbstractMutableGraphTest<V extends Comparable<V>, G extend
         graph.addEdge(v1,v3);
 
         Assertions.assertEquals(graph.getVertices().size(), 3);
+        Assertions.assertTrue(checkInv());
     }
 
     @Test
     void testGetVerticesEmpty(){
 
         Assertions.assertTrue(graph.getVertices().isEmpty());
+        Assertions.assertTrue(checkInv());
     }
 
     @Test
@@ -183,12 +215,58 @@ public abstract class AbstractMutableGraphTest<V extends Comparable<V>, G extend
         graph.addEdge(v2,v3);
 
         Assertions.assertEquals(graph.getEdges().size(), 3);
+        Assertions.assertTrue(checkInv());
     }
 
     @Test
     void testGetEdgesEmpty(){
 
         Assertions.assertTrue(graph.getEdges().isEmpty());
+        Assertions.assertTrue(checkInv());
+    }
+
+    @Test
+    void testRemoveVertex(){
+        graph.addVertex(v1);
+
+        Assertions.assertTrue(graph.removeVertex(v1));
+        Assertions.assertTrue(checkInv());
+    }
+
+    @Test
+    void testRemoveVertexNotFound(){
+        graph.addVertex(v1);
+
+        Assertions.assertFalse(graph.removeVertex(v2));
+        Assertions.assertTrue(checkInv());
+    }
+
+    @Test
+    void testRemoveVertexTwice(){
+        graph.addVertex(v1);
+
+        Assertions.assertTrue(graph.removeVertex(v1));
+        Assertions.assertFalse(graph.removeVertex(v1));
+        Assertions.assertTrue(checkInv());
+    }
+
+    @Test
+    void testRemoveEdge(){
+        graph.addVertex(v1);
+        graph.addVertex(v2);
+
+        Assertions.assertTrue(graph.addEdge(v1,v2));
+        Assertions.assertTrue(graph.containsEdge(v1,v2));
+        Assertions.assertTrue(graph.removeEdge(v1,v2));
+        Assertions.assertFalse(graph.containsEdge(v1,v2));
+        Assertions.assertTrue(checkInv());
+    }
+
+    @Test
+    void testRemoveEdgeNotFound(){
+        Assertions.assertFalse(graph.containsEdge(v1,v2));
+        Assertions.assertFalse(graph.removeEdge(v1,v2));
+        Assertions.assertTrue(checkInv());
     }
 
 }

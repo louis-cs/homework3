@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest
+testGetDepthTwo  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <0> but was: <1>
+
+testGetDepthNoVertex  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+
+testGetDepthNoRoot  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IllegalStateException to be thrown, but nothing was thrown.
+
