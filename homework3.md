@@ -153,7 +153,7 @@ boolean removeVertex(N vertex);
 - requires: vertex is in $`\mathcal{N}`$ and not $`\mathsf{null}`$
 - ensures:
     + $`V_{next} = V_{this} \setminus \{\texttt{vertex}\}`$;
-    + $`E_{next} = E_{this} \setminus \{\texttt{e} \in E_{this}, \texttt{target} \in V_{this} \mid \texttt{e = (vertex, target)}`$
+    + $`E_{next} = E_{this} \setminus \{\texttt{e} \in E_{this}, \texttt{target} \in V_{this} \mid \texttt{e = (vertex, target) or e = (target, vertex)}`$
     + If $`G_{this}`$ satisfies the class invariant, $`G_{next}`$ also satisfies the class invariant; and
     + returns true if $`\texttt{vertex} \in V_{this}`$.
     + returns false otherwise
