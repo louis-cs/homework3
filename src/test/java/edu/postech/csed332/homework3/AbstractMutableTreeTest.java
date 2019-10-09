@@ -217,5 +217,4 @@ public abstract class AbstractMutableTreeTest<V extends Comparable<V>, T extends
         Assertions.assertTrue(tree.containsVertex(v2));
         Assertions.assertTrue(tree.containsVertex(v3));
     }
-
 }
