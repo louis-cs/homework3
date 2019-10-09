@@ -1,13 +1,55 @@
 -------------------------------------------------------------------------------
 Test set: edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest
+Tests run: 25, Failures: 17, Errors: 0, Skipped: 0, Time elapsed: 0.02 s <<< FAILURE! - in edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest
 testGetDepthTwo  Time elapsed: 0 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <0> but was: <1>
+
+testRemoveEdgeWrongTarget  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+
+testAddEdge  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+
+testGetChildren  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <0> but was: <2>
+
+testGetHeightNoRoot  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IllegalStateException to be thrown, but nothing was thrown.
+
+testAddEdgeDuplicate  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+
+testRemoveVertexMultiple  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 
 testGetDepthNoVertex  Time elapsed: 0 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 
+testAddEdgeExistingTarget  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+
+testRemoveVertex  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+
 testGetDepthNoRoot  Time elapsed: 0 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.IllegalStateException to be thrown, but nothing was thrown.
+
+testRemoveEdge  Time elapsed: 0.012 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+
+testAddVertex  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+
+testGetHeight  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <0> but was: <1>
+
+testGetParent  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+
+testRemoveEdgeMultiple  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+
+testAddVertexNotEmpty  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 

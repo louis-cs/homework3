@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0.001" tests="4" errors="0" skipped="0" failures="3">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0.02" tests="25" errors="0" skipped="0" failures="17">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="D:\Program files\JavaDK\bin"/>
-    <property name="sun.java.command" value="C:\Users\louis\AppData\Local\Temp\surefire18330592491538926953\surefirebooter844019889753797759.jar C:\Users\louis\AppData\Local\Temp\surefire18330592491538926953 2019-10-09T19-09-08_059-jvmRun1 surefire619609674320741141tmp surefire_012540987196968738016tmp"/>
+    <property name="sun.java.command" value="C:\Users\louis\AppData\Local\Temp\surefire4703939135783353207\surefirebooter13695862100349619265.jar C:\Users\louis\AppData\Local\Temp\surefire4703939135783353207 2019-10-09T22-38-45_328-jvmRun1 surefire3863186078651690394tmp surefire_018118614481761549525tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="D:\Documents\Course Notes\Software Design Methods\homework3\target\test-classes;D:\Documents\Course Notes\Software Design Methods\homework3\target\classes;C:\Users\louis\.m2\repository\org\jetbrains\annotations\17.0.0\annotations-17.0.0.jar;C:\Users\louis\.m2\repository\org\junit\jupiter\junit-jupiter\5.5.2\junit-jupiter-5.5.2.jar;C:\Users\louis\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.2\junit-jupiter-api-5.5.2.jar;C:\Users\louis\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\louis\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\louis\.m2\repository\org\junit\platform\junit-platform-commons\1.5.2\junit-platform-commons-1.5.2.jar;C:\Users\louis\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.5.2\junit-jupiter-params-5.5.2.jar;C:\Users\louis\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.2\junit-jupiter-engine-5.5.2.jar;C:\Users\louis\.m2\repository\org\junit\platform\junit-platform-engine\1.5.2\junit-platform-engine-1.5.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -33,7 +33,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\louis\AppData\Local\Temp\surefire18330592491538926953\surefirebooter844019889753797759.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\louis\AppData\Local\Temp\surefire4703939135783353207\surefirebooter13695862100349619265.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="12.0.2+10"/>
@@ -62,7 +62,43 @@
     <failure message="expected: &lt;0&gt; but was: &lt;1&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <0> but was: <1>
 ]]></failure>
   </testcase>
+  <testcase name="testAddEdgeNoSource" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0"/>
+  <testcase name="testRemoveEdgeWrongTarget" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0.001">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+]]></failure>
+  </testcase>
+  <testcase name="testAddEdge" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+]]></failure>
+  </testcase>
+  <testcase name="testGetChildren" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0">
+    <failure message="expected: &lt;0&gt; but was: &lt;2&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <0> but was: <2>
+]]></failure>
+  </testcase>
+  <testcase name="testGetHeightNoRoot" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0">
+    <failure message="Expected java.lang.IllegalStateException to be thrown, but nothing was thrown." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Expected java.lang.IllegalStateException to be thrown, but nothing was thrown.
+</failure>
+  </testcase>
+  <testcase name="testGetChildrenEmpty" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0"/>
+  <testcase name="testGetParentEmpty" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0"/>
+  <testcase name="testAddEdgeDuplicate" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+]]></failure>
+  </testcase>
+  <testcase name="testRemoveVertexMultiple" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+]]></failure>
+  </testcase>
   <testcase name="testGetDepthNoVertex" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+]]></failure>
+  </testcase>
+  <testcase name="testGetChildrenNotFound" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0"/>
+  <testcase name="testAddEdgeExistingTarget" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+]]></failure>
+  </testcase>
+  <testcase name="testRemoveVertex" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0">
     <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 ]]></failure>
   </testcase>
@@ -71,4 +107,31 @@
 </failure>
   </testcase>
   <testcase name="testGetDepthRoot" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0"/>
+  <testcase name="testRemoveEdge" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0.012">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+]]></failure>
+  </testcase>
+  <testcase name="testRemoveVertexNotFound" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0"/>
+  <testcase name="testAddVertex" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+]]></failure>
+  </testcase>
+  <testcase name="testGetHeight" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0">
+    <failure message="expected: &lt;0&gt; but was: &lt;1&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <0> but was: <1>
+]]></failure>
+  </testcase>
+  <testcase name="testGetParentNotFound" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0"/>
+  <testcase name="testGetParent" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+]]></failure>
+  </testcase>
+  <testcase name="testRemoveEdgeMultiple" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+]]></failure>
+  </testcase>
+  <testcase name="testAddVertexNotEmpty" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+]]></failure>
+  </testcase>
+  <testcase name="testRemoveEdgeEmpty" classname="edu.postech.csed332.homework3.IntegerDelegateMutableTreeTest" time="0"/>
 </testsuite>

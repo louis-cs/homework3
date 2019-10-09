@@ -71,11 +71,12 @@ public class AdjacencyListGraph<N extends Comparable<N>> implements MutableGraph
 
     @Override
     public boolean addEdge(@NotNull N source, @NotNull N target) {
+        if (source.equals(target)) return false;
         if (this.containsEdge(source, target)) return false;
-        else{
-            adjMap.get(source).add(target);
-            return true;
-        }
+        if (!adjMap.containsKey(source)) this.addVertex(source);
+        if (!adjMap.containsKey(target)) this.addVertex(target);
+        adjMap.get(source).add(target);
+        return true;
     }
 
     @Override
@@ -93,12 +94,13 @@ public class AdjacencyListGraph<N extends Comparable<N>> implements MutableGraph
         for (Map.Entry<N, SortedSet<N>> entry : adjMap.entrySet()){
             if (entry.getValue().contains(target)) sources.add(entry.getKey());
         }
-        return sources;
+        return Collections.unmodifiableSet(sources);
     }
 
     @Override
     public @NotNull Set<N> getTargets(N source) {
-        return adjMap.get(source);
+        if (!adjMap.containsKey(source)) return Collections.emptySet();
+        return Collections.unmodifiableSet(adjMap.get(source));
     }
 
     @Override

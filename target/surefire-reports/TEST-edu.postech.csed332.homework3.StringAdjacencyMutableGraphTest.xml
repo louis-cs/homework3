@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0.001" tests="17" errors="0" skipped="0" failures="17">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0.005" tests="26" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="D:\Program files\JavaDK\bin"/>
-    <property name="sun.java.command" value="C:\Users\louis\AppData\Local\Temp\surefire18330592491538926953\surefirebooter844019889753797759.jar C:\Users\louis\AppData\Local\Temp\surefire18330592491538926953 2019-10-09T19-09-08_059-jvmRun1 surefire619609674320741141tmp surefire_012540987196968738016tmp"/>
+    <property name="sun.java.command" value="C:\Users\louis\AppData\Local\Temp\surefire4703939135783353207\surefirebooter13695862100349619265.jar C:\Users\louis\AppData\Local\Temp\surefire4703939135783353207 2019-10-09T22-38-45_328-jvmRun1 surefire3863186078651690394tmp surefire_018118614481761549525tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="D:\Documents\Course Notes\Software Design Methods\homework3\target\test-classes;D:\Documents\Course Notes\Software Design Methods\homework3\target\classes;C:\Users\louis\.m2\repository\org\jetbrains\annotations\17.0.0\annotations-17.0.0.jar;C:\Users\louis\.m2\repository\org\junit\jupiter\junit-jupiter\5.5.2\junit-jupiter-5.5.2.jar;C:\Users\louis\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.2\junit-jupiter-api-5.5.2.jar;C:\Users\louis\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\louis\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\louis\.m2\repository\org\junit\platform\junit-platform-commons\1.5.2\junit-platform-commons-1.5.2.jar;C:\Users\louis\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.5.2\junit-jupiter-params-5.5.2.jar;C:\Users\louis\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.2\junit-jupiter-engine-5.5.2.jar;C:\Users\louis\.m2\repository\org\junit\platform\junit-platform-engine\1.5.2\junit-platform-engine-1.5.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -33,7 +33,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\louis\AppData\Local\Temp\surefire18330592491538926953\surefirebooter844019889753797759.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\louis\AppData\Local\Temp\surefire4703939135783353207\surefirebooter13695862100349619265.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="12.0.2+10"/>
@@ -58,72 +58,30 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="56.0"/>
   </properties>
-  <testcase name="testGetTargetsNotFound" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0">
-    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-]]></failure>
-  </testcase>
-  <testcase name="testAddDuplicateVertices" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0">
-    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-]]></failure>
-  </testcase>
-  <testcase name="testGetEdgesMultiple" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0">
-    <failure message="expected: &lt;0&gt; but was: &lt;3&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <0> but was: <3>
-]]></failure>
-  </testcase>
-  <testcase name="testGetSourcesNoParent" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0">
-    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-]]></failure>
-  </testcase>
-  <testcase name="testGetSourcesMultiple" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0">
-    <failure message="expected: &lt;0&gt; but was: &lt;2&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <0> but was: <2>
-]]></failure>
-  </testcase>
-  <testcase name="testContainsEdgeTrue" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0">
-    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-]]></failure>
-  </testcase>
-  <testcase name="testContainsVertexFalse" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0.001">
-    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-]]></failure>
-  </testcase>
-  <testcase name="testGetVerticesEmpty" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0">
-    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-]]></failure>
-  </testcase>
-  <testcase name="testGetEdgesEmpty" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0">
-    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-]]></failure>
-  </testcase>
-  <testcase name="testGetSourcesNotFound" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0">
-    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-]]></failure>
-  </testcase>
-  <testcase name="testAddVertex" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0">
-    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-]]></failure>
-  </testcase>
-  <testcase name="testContainsEdgeFalse" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0">
-    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-]]></failure>
-  </testcase>
-  <testcase name="testGetVerticesMultiple" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0">
-    <failure message="expected: &lt;0&gt; but was: &lt;3&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <0> but was: <3>
-]]></failure>
-  </testcase>
-  <testcase name="testGetTargetsMultiple" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0">
-    <failure message="expected: &lt;0&gt; but was: &lt;2&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <0> but was: <2>
-]]></failure>
-  </testcase>
-  <testcase name="testContainsVertexTrue" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0">
-    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-]]></failure>
-  </testcase>
-  <testcase name="testFindReachableVertices" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0">
-    <failure message="expected: &lt;[]&gt; but was: &lt;[2, 1]&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <[]> but was: <[2, 1]>
-]]></failure>
-  </testcase>
-  <testcase name="testGetTargetsNoChildren" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0">
-    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-]]></failure>
-  </testcase>
+  <testcase name="testGetTargetsNotFound" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testRemoveEdgeNotFound" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testAddDuplicateVertices" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testAddEdge" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testGetEdgesMultiple" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testRemoveVertexTwice" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testAddEdgeDuplicate" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testGetSourcesNoParent" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testGetSourcesMultiple" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testContainsEdgeTrue" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testContainsVertexFalse" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testRemoveVertex" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testRemoveEdge" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testGetVerticesEmpty" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testGetEdgesEmpty" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testRemoveVertexNotFound" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testGetSourcesNotFound" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testAddVertex" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testContainsEdgeFalse" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testGetVerticesMultiple" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testAddEdgeEmpty" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testAddEdgeIllegalArgument" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testGetTargetsMultiple" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testContainsVertexTrue" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
+  <testcase name="testFindReachableVertices" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0.002"/>
+  <testcase name="testGetTargetsNoChildren" classname="edu.postech.csed332.homework3.StringAdjacencyMutableGraphTest" time="0"/>
 </testsuite>

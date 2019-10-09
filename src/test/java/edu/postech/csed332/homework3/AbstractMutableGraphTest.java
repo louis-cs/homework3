@@ -67,6 +67,22 @@ public abstract class AbstractMutableGraphTest<V extends Comparable<V>, G extend
     }
 
     @Test
+    void testAddEdgeEmpty(){
+        Assertions.assertTrue(graph.addEdge(v1,v2));
+        Assertions.assertTrue((graph.containsVertex(v1)));
+        Assertions.assertTrue((graph.containsVertex(v2)));
+        Assertions.assertTrue(checkInv());
+    }
+
+    @Test
+    void testAddEdgeIllegalArgument(){
+        graph.addVertex(v1);
+
+        Assertions.assertFalse(graph.addEdge(v1,v1));
+        Assertions.assertTrue(checkInv());
+    }
+
+    @Test
     void testAddEdgeDuplicate(){
         graph.addVertex(v1);
         graph.addVertex(v2);
@@ -156,7 +172,7 @@ public abstract class AbstractMutableGraphTest<V extends Comparable<V>, G extend
         graph.addVertex(v1);
         graph.addVertex(v2);
         graph.addVertex(v3);
-        graph.addEdge(v1,v3);
+        graph.addEdge(v1,v2);
         graph.addEdge(v1,v3);
 
         Assertions.assertEquals(graph.getTargets(v1).size(), 2);
@@ -210,7 +226,7 @@ public abstract class AbstractMutableGraphTest<V extends Comparable<V>, G extend
         graph.addVertex(v1);
         graph.addVertex(v2);
         graph.addVertex(v3);
-        graph.addEdge(v1,v3);
+        graph.addEdge(v1,v2);
         graph.addEdge(v1,v3);
         graph.addEdge(v2,v3);
 
